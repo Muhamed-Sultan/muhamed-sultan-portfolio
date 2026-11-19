@@ -165,3 +165,20 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('valuesRow').innerHTML = values.map(v => `<span class="value-chip">${v}</span>`).join('');
 
 });
+
+
+(function(){
+  const root = document.documentElement;
+  const saved = localStorage.getItem('theme');
+  if (saved) root.dataset.theme = saved;
+
+  const btn = document.getElementById('themeToggle');
+  const sync = () => { btn.textContent = root.dataset.theme === 'dark' ? '☀️' : '🌙'; };
+  sync();
+
+  btn.addEventListener('click', () => {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', root.dataset.theme);
+    sync();
+  });
+})();
