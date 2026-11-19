@@ -435,3 +435,35 @@ img{ max-width:100%; display:block; }
 @media (max-width: 560px){
   .certs-grid{ grid-template-columns: 1fr; }
 }
+
+
+/* ===== DARK MODE ===== */
+.theme-toggle{ width:40px; height:40px; border-radius:50%; border:1px solid var(--gray-200); background:var(--white); color:var(--navy); cursor:pointer; font-size:18px; display:grid; place-items:center; flex-shrink:0; margin-left:8px; }
+.theme-toggle:hover{ border-color: var(--blue); }
+
+[data-theme="dark"]{
+  --white:#0B1020; --gray-50:#111A2E; --gray-100:#18233C; --gray-200:#27344F;
+  --gray-400:#6B7896; --slate:#D6DEEE; --slate-soft:#9AA8C4; --navy:#F1F5FF;
+}
+[data-theme="dark"] body{ background:#0B1020; color:var(--slate); }
+[data-theme="dark"] .navbar.scrolled{ background:rgba(11,16,32,.85); border-bottom-color:#27344F; }
+[data-theme="dark"] .nav-links.open{ background:#0B1020; border-bottom-color:#27344F; }
+[data-theme="dark"] .skill-card,
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .week-card,
+[data-theme="dark"] .cert-card,
+[data-theme="dark"] .mini-phone{ background:#111A2E; border-color:#27344F; }
+[data-theme="dark"] .cert-thumb{ background:#0F1629; }
+[data-theme="dark"] .timeline-node{ background:#0B1020; }
+[data-theme="dark"] .footer,
+[data-theme="dark"] .brand-section{ background:#050812; }
+[data-theme="dark"] .phone-frame,
+[data-theme="dark"] .phone-notch{ background:#1E2A44; }
+[data-theme="dark"] .concept-disclaimer{ border-top-color:#27344F; }
+[data-theme="dark"] .improving-chip{ background:#111A2E; color:#D6DEEE; }
+[data-theme="dark"] .section-alt{ background:#0F1629; }
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4{ color:#F1F5FF; }
+[data-theme="dark"] .btn-secondary{ color:#F1F5FF; border-color:#27344F; }
