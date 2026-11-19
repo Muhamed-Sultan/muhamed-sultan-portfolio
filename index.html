@@ -9,6 +9,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  .certs-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap:24px; }
+  .cert-card{
+    background:#fff; border:1px solid var(--gray-200); border-radius: 24px; overflow:hidden;
+    box-shadow: 0 1px 2px rgba(15,23,42,.04), 0 8px 24px -12px rgba(15,23,42,.12);
+    display:flex; flex-direction:column; transition: transform .3s, box-shadow .3s;
+  }
+  .cert-card:hover{ transform: translateY(-6px); box-shadow: 0 4px 10px rgba(15,23,42,.06), 0 20px 40px -16px rgba(47,111,237,.22); }
+  .cert-thumb{ background: var(--gray-50); border-bottom:1px solid var(--gray-200); aspect-ratio: 4 / 3; overflow:hidden; }
+  .cert-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .cert-body{ padding:22px 24px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .cert-body h3{ font-size:17px; }
+  .cert-issuer{ font-family: var(--font-mono); font-size:13px; color: var(--slate-soft); }
+  .cert-link{ margin-top:auto; padding-top:6px; font-weight:600; font-size:14px; color: var(--blue-dark); }
+  .cert-link:hover{ color: var(--green); }
+  @media (max-width: 560px){ .certs-grid{ grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
 
@@ -67,7 +84,6 @@
         <div class="phone-frame" id="phoneFrame">
           <div class="phone-notch"></div>
           <div class="phone-screen" id="phoneScreen">
-            <!-- screens injected/animated via CSS classes, see script.js -->
             <div class="app-screen app-grocery active" data-app="Grocery Shopping App">
               <div class="app-topbar"><span class="app-dot"></span><span class="app-dot"></span><span class="app-dot"></span></div>
               <div class="app-title-row">Grocery Cart</div>
@@ -275,11 +291,28 @@
     <div class="section-inner">
       <p class="eyebrow reveal"><span class="eyebrow-dot"></span>class Certificates extends StatelessWidget</p>
       <h2 class="section-title reveal">Certificates</h2>
-      <div class="certs-grid" id="certsGrid"></div>
+      <div class="certs-grid" id="certsGrid">
+        <article class="cert-card">
+          <div class="cert-thumb"><img src="cert-erasoft.png" alt="Flutter Diploma certificate" loading="lazy"></div>
+          <div class="cert-body">
+            <h3>Flutter Diploma</h3>
+            <p class="cert-issuer">Eraasoft Academy · 2026</p>
+            <a href="cert-erasoft.png" target="_blank" rel="noopener" class="cert-link">View Certificate →</a>
+          </div>
+        </article>
+        <article class="cert-card">
+          <div class="cert-thumb"><img src="cert-mcit-ai.png" alt="AI Advanced certificate" loading="lazy"></div>
+          <div class="cert-body">
+            <h3>AI Advanced</h3>
+            <p class="cert-issuer">Empower Yourself by MCIT · Fast Lane · 2026</p>
+            <a href="cert-mcit-ai.png" target="_blank" rel="noopener" class="cert-link">View Certificate →</a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
-  <!-- ============ JOURNEY (timeline + SMART plan + brand) ============ -->
+  <!-- ============ JOURNEY ============ -->
   <section class="section" id="journey">
     <div class="section-inner">
       <p class="eyebrow reveal"><span class="eyebrow-dot"></span>class Journey extends StatefulWidget</p>
@@ -337,7 +370,7 @@
           LinkedIn
         </a>
         <a href="https://github.com/Muhamed-Sultan" target="_blank" rel="noopener" class="btn btn-secondary btn-contact">
-          <svg viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.26-.45-1.29.1-2.69 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.9-1.29 2.74-1.02 2.74-1.02.55 1.4.2 2.43.1 2.69.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.26-.45-1.29.1-2.69 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.9-1.29 2.74-1.02 2.74-1.02.55 1.4.2 2.43.1 2.69.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.850v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
           GitHub
         </a>
       </div>
